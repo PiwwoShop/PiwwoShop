@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIWWO | Inicio</title>
+  <link rel="icon" type="image/png" href="logo-piwwo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @font-face {
+      font-family: 'Font Awesome 6 Brands';
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2') format('woff2');
+    }
+
+    [class^="fab"]::before {
+      font-family: 'Font Awesome 6 Brands';
+      font-weight: 400;
+      font-style: normal;
+      display: inline-block;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fa-instagram::before { content: "\f16d"; }
+    .fa-facebook::before { content: "\f09a"; }
+    .fa-whatsapp::before { content: "\f232"; }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      position: relative;
+      background-color: #111;
+    }
+
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo a img {
+      width: 220px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #00bcd4;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero-box {
+      background: linear-gradient(135deg, #00bcd4, #0097a7);
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 188, 212, 0.4);
+      padding: 30px 25px;
+      margin: 60px auto 30px;
+      max-width: 900px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-box h2 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+      margin: 0;
+    }
+
+    .promo {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .promo img {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .oferta.destacada {
+      background: linear-gradient(135deg, #00bcd4, #0097a7);
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 188, 212, 0.4);
+      padding: 40px 30px;
+      margin: 60px auto;
+      text-align: center;
+      max-width: 900px;
+      color: #fff;
+    }
+
+    .oferta.destacada h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .oferta.destacada p {
+      font-size: 1.5rem;
+      line-height: 1.7;
+      color: #fff;
+    }
+
+    .oferta.destacada .marca {
+      font-weight: bold;
+      font-size: 1.7rem;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+    }
+
+    .info {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .card-info {
+      background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+      border: 1px solid #333;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.15);
+      padding: 30px 25px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .card-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 188, 212, 0.3);
+    }
+
+    .card-info h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
+    }
+
+    .card-info p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      line-height: 1.8;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+    }
+
+    footer p {
+      font-size: 1rem;
+      color: #888;
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 2rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #00bcd4;
+    }
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay muted loop>
+    <source src="fondo.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo-piwwo.png" alt="Logo PIWWO">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Presupuesto</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-box">
+    <h2>🎮 ¡Repara tu dispositivo y entra al sorteo de un producto gaming! 🎮</h2>
+  </section>
+
+  <section class="promo">
+    <img src="Rascas.png" alt="Promoción Rasca y Gana PIWWO" />
+  </section>
+
+  <section class="oferta destacada">
+    <h2>🎉 ¡Promoción de Lanzamiento! 🎉</h2>
+    <p>Todos los clientes que realicen una reparación recibirán un <strong>rasca exclusivo</strong> para participar en el <strong>sorteo de un producto gaming sorpresa</strong>.</p>
+    <p>¡Ven, repara y prueba suerte en <span class="marca">PIWWO</span>!</p>
+  </section>
+
+  <section class="info">
+    <div class="card-info">
+      <h2>¿Quiénes somos?</h2>
+      <p>En <strong>PIWWO</strong> nos especializamos en la reparación profesional de <strong>móviles, ordenadores y consolas</strong>. Nos mueve la pasión por ofrecer <em>soluciones rápidas, efectivas</em> y a un precio justo. ¡Tu tecnología en buenas manos!</p>
+    </div>
+
+    <div class="card-info">
+      <h2>¿Dónde estamos?</h2>
+      <p>Nos encontramos en <strong>Abanilla, Murcia</strong>, donde combinamos experiencia técnica y atención cercana. Visítanos y disfruta de nuestra <em>oferta de inauguración</em>. ¡Estaremos encantados de ayudarte!</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/piwwoshop" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/34603957364" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 PIWWO - Reparaciones y tienda de confianza</p>
+  </footer>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68432d75f8ef69190eb671b3/1it36j5cp';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+</body>
+</html>
