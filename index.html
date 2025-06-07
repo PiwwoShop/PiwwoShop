@@ -156,7 +156,7 @@
       border-radius: 16px;
       box-shadow: 0 0 25px rgba(0, 188, 212, 0.4);
       padding: 40px 30px;
-      margin: 60px auto;
+      margin: 60px auto 20px;
       text-align: center;
       max-width: 900px;
       color: #fff;
@@ -171,6 +171,30 @@
     .oferta.destacada p {
       font-size: 1.5rem;
       line-height: 1.7;
+    }
+
+    .boton-promocion {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .boton-promocion a button {
+      padding: 12px 28px;
+      background-color: #00bcd4;
+      color: #111;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .boton-promocion a button:hover {
+      background-color: #0097a7;
+      transform: scale(1.05);
     }
 
     .marca {
@@ -279,13 +303,17 @@
     <img src="Rascas.png" alt="Promoción Rasca y Gana PIWWO" />
   </section>
 
-  <a href="promocion.html" style="text-decoration: none; color: inherit;">
-    <section class="oferta destacada">
-      <h2>🎉 ¡Promoción de Lanzamiento! 🎉</h2>
-      <p>Todos los clientes que realicen una reparación recibirán un <strong>rasca exclusivo</strong> para participar en el <strong>sorteo de un producto gaming sorpresa</strong>.</p>
-      <p>¡Ven, repara y prueba suerte en <span class="marca">PIWWO</span>!</p>
-    </section>
-  </a>
+  <section class="oferta destacada">
+    <h2>🎉 ¡Promoción de Lanzamiento! 🎉</h2>
+    <p>Todos los clientes que realicen una reparación recibirán un <strong>rasca exclusivo</strong> para participar en el <strong>sorteo de un producto gaming sorpresa</strong>.</p>
+    <p>¡Ven, repara y prueba suerte en <span class="marca">PIWWO</span>!</p>
+  </section>
+
+  <div class="boton-promocion">
+    <a href="promocion.html">
+      <button>👀 Ver más</button>
+    </a>
+  </div>
 
   <section class="info">
     <div class="card-info">
@@ -321,5 +349,7 @@
   </script>
   <!--End of Tawk.to Script-->
 </body>
+</html>
+
 </html>
 
