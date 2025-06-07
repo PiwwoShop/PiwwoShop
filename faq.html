@@ -15,6 +15,7 @@
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       background-color: #111;
+      overflow-x: hidden;
     }
 
     video.background-video {
@@ -35,10 +36,25 @@
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.8);
       border-bottom: 1px solid #333;
+      flex-wrap: wrap;
     }
 
     .logo a img {
       width: 220px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #00bcd4;
+      margin: 4px 0;
     }
 
     nav ul {
@@ -59,6 +75,33 @@
 
     nav a:hover {
       color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 200px;
+        display: none;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 999;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        margin-bottom: 10px;
+      }
     }
 
     .hero {
@@ -141,8 +184,13 @@
         <img src="logo-piwwo.png" alt="Logo PIWWO">
       </a>
     </div>
+    <div class="menu-toggle" onclick="document.getElementById('menu').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
-      <ul>
+      <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Presupuesto</a></li>
         <li><a href="tienda.html">Tienda</a></li>
