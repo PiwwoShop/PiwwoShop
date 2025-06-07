@@ -138,10 +138,28 @@
       line-height: 1.7;
     }
 
-    .marca {
+    .boton-presupuesto {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #fff;
+      color: #0097a7;
       font-weight: bold;
-      font-size: 1.7rem;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+    }
+
+    .boton-presupuesto:hover {
+      background-color: #000;
+      color: #00bcd4;
+      transform: scale(1.05);
+    }
+
+    .boton-presupuesto i {
+      margin-right: 10px;
     }
 
     footer {
@@ -211,6 +229,10 @@
     <p>¡Solo las <strong>200 primeras personas</strong> que reserven una cita para reparación o limpieza de cualquier dispositivo a través de nuestra página web recibirán un <strong>rasca exclusivo</strong>!</p>
     <p>De estos 200 rascas, <strong>solo 5 están premiados</strong>. Si al rascar descubres que has ganado, <strong>podrás contactar con nosotros inmediatamente</strong> para enviarnos una foto del rasca premiado como prueba y te haremos llegar tu <strong>premio sorpresa gaming</strong> directamente a tu domicilio.</p>
     <p>No pierdas la oportunidad. <strong>¡Reserva ya tu cita y participa!</strong></p>
+
+    <a href="servicios.html" class="boton-presupuesto">
+      <i class="fas fa-wrench"></i> Pedir Presupuesto
+    </a>
   </section>
 
   <footer>
