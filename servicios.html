@@ -4,38 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PIWWO | Servicios</title>
-   <link rel="icon" type="image/png" href="logo-piwwo.png">
+  <link rel="icon" type="image/png" href="logo-piwwo.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <style>
-    @font-face {
-      font-family: 'Font Awesome 6 Brands';
-      font-style: normal;
-      font-weight: 400;
-      font-display: block;
-      src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2') format('woff2');
-    }
-
-    [class^="fab"]::before {
-      font-family: 'Font Awesome 6 Brands';
-      font-weight: 400;
-      font-style: normal;
-      display: inline-block;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .fa-instagram::before { content: "\f16d"; }
-    .fa-facebook::before { content: "\f09a"; }
-    .fa-whatsapp::before { content: "\f232"; }
-
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
-      position: relative;
       background-color: #111;
+      overflow-x: hidden;
     }
 
     video.background-video {
@@ -56,15 +36,25 @@
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.8);
       border-bottom: 1px solid #333;
+      flex-wrap: wrap;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo a img {
+    .logo img {
       width: 220px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #00bcd4;
+      margin: 4px 0;
     }
 
     nav ul {
@@ -85,6 +75,33 @@
 
     nav a:hover {
       color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 200px;
+        display: none;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 999;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        margin-bottom: 10px;
+      }
     }
 
     .hero {
@@ -194,14 +211,19 @@
         <img src="logo-piwwo.png" alt="Logo PIWWO">
       </a>
     </div>
-   <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="servicios.html">Presupuesto</a></li>
-    <li><a href="tienda.html">Tienda</a></li>
-    <li><a href="faq.html">Preguntas Frecuentes</a></li>
-  </ul>
-</nav>
+    <div class="menu-toggle" onclick="document.getElementById('menu').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Presupuesto</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
@@ -211,13 +233,13 @@
 
   <section class="formulario">
     <h2>Solicita Presupuesto</h2>
-<form action="https://formsubmit.co/serviciotecnicopiwwo@gmail.com" method="POST">
-  <input type="text" name="name" placeholder="Tu nombre" required />
-  <input type="email" name="email" placeholder="Correo electrónico" required />
-  <textarea name="message" rows="5" placeholder="Describe tu problema (modelo, daño, etc)" required></textarea>
-  <input type="hidden" name="_next" value="https://piwwoshop.com/gracias.html"> <!-- Redirección opcional -->
-  <button type="submit">Enviar</button>
-</form>
+    <form action="https://formsubmit.co/serviciotecnicopiwwo@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
+      <textarea name="message" rows="5" placeholder="Describe tu problema (modelo, daño, etc)" required></textarea>
+      <input type="hidden" name="_next" value="https://piwwoshop.com/gracias.html" />
+      <button type="submit">Enviar</button>
+    </form>
   </section>
 
   <section class="imagen-profesional">
@@ -231,18 +253,25 @@
     </div>
     <p>&copy; 2025 PIWWO - Reparaciones y tienda de confianza</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68432d75f8ef69190eb671b3/1it36j5cp';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68432d75f8ef69190eb671b3/1it36j5cp';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
 </body>
 </html>
